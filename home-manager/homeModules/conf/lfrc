@@ -1,0 +1,30 @@
+map  gr  cd /
+map  ge  cd /etc
+map  gn  cd /nix
+map  gc  cd ~/.config
+
+map  sw  shell-wait
+map  ss  shell
+map  sp  shell-pipe
+map  sa  shell-async
+
+cmd  trash  ${{ mv "$f" ~/.trash }}
+
+map  d
+map  dd            cut 
+map  dD            :trash
+map  DD            delete
+map  y
+map  yy            copy
+map  p
+map  pp            paste
+map  r
+map  rr            rename
+map  ;    
+map  ;             read
+map  
+map  <backspace2>  set hidden!
+map  <enter>       ${{ $EDITOR "$f" }}
+
+set  hidden  true
+
