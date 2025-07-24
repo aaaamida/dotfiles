@@ -1,0 +1,12 @@
+background-color = #ff1f1e33
+width = 400
+height = 50
+border-size = 3
+border-color = #ffffaeae
+max-icon-size = 32
+markup = 1
+default-timeout = 300
+ignore-timeout = 1
+anchor = bottom-right
+max-history = 20
+font = IosevkaTermSlab Nerd Font 10
