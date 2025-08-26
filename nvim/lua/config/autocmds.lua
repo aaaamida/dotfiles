@@ -16,11 +16,13 @@ autocmd("BufEnter", {
       or ft == "toml"
       or ft == "json"
       or ft == "jsonc"
-      or ft == "xml"
     then
       vim.cmd([[set nowrap rnu tabstop=2 shiftwidth=2 autoindent smartindent]])
+    elseif ft == "md" then
+      vim.cmd([[set nowrap rnu tabstop=2 shiftwidth=2 autoindent smartindent]])
+      require("presence").stop(self)
     elseif ft == "typst" then
-      vim.cmd([[set nowrap rnu tabstop=6 shiftwidth=6 autoindent smartindent]])
+      vim.cmd([[set nowrap rnu tabstop=4 shiftwidth=4 autoindent smartindent]])
     elseif ft == "blade" then
       vim.cmd([[set nowrap rnu tabstop=8 shiftwidth=8 autoindent smartindent ft=html]])
     else

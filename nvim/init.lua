@@ -1,6 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-local strategies = require("codecompanion.strategies")
+-- local strategies = require("codecompanion.strategies")
 local keymaps = require("lazyvim.plugins.lsp.keymaps")
 
 require("catppuccin").setup({
@@ -32,7 +32,7 @@ require("catppuccin").setup({
 
 require("stay-centered").setup()
 require("colorizer").setup()
-require("rainbow-delimiters")
+-- require("rainbow-delimiters")
 
 require("nvim-ts-autotag").setup({
   opts = {
@@ -47,35 +47,39 @@ require("nvim-ts-autotag").setup({
   },
 })
 
-require("codecompanion").setup({
-  adapters = {
-    gemini = function()
-      return require("codecompanion.adapters").extend("gemini", {
-        schema = {
-          model = {
-            default = "gemini-1.5-flash",
-          },
-        },
-      })
-    end,
-  },
-  strategies = {
-    chat = {
-      keymaps = {
-        send = {
-          modes = {
-            n = { "<C-s>" },
-          },
-        },
-      },
-    },
-  },
+require("lspconfig").qmlls.setup({
+  cmd = { "qmlls", "-E" },
 })
 
+-- require("codecompanion").setup({
+--   adapters = {
+--     gemini = function()
+--       return require("codecompanion.adapters").extend("gemini", {
+--         schema = {
+--           model = {
+--             default = "gemini-1.5-flash",
+--           },
+--         },
+--       })
+--     end,
+--   },
+--   strategies = {
+--     chat = {
+--       keymaps = {
+--         send = {
+--           modes = {
+--             n = { "<C-s>" },
+--           },
+--         },
+--       },
+--     },
+--   },
+-- })
+
 vim.g.autoformat = false
-vim.g.codecompanion_adapter = "gemini"
+-- vim.g.codecompanion_adapter = "gemini"
 
 vim.cmd([[
-        colorscheme catppuccin-mocha
-
+  colorscheme catppuccin-mocha
+  set nospell
 ]])

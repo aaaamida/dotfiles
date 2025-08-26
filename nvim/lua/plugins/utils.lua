@@ -6,6 +6,15 @@ return {
     "EdenEast/nightfox.nvim",
   },
   {
+    "akinsho/bufferline.nvim",
+    init = function ()
+      local bufline = require("catppuccin.groups.integrations.bufferline")
+      function bufline.get()
+        return bufline.get_theme()
+      end
+    end
+  },
+  {
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -43,6 +52,9 @@ return {
   },
   {
     "andweeb/presence.nvim",
+    cond = function ()
+      return vim.bo.filetype ~= "md"
+    end
   },
   {
     "debugloop/telescope-undo.nvim",
@@ -108,15 +120,15 @@ return {
       "nvim-lua/plenary.nvim",
     },
   },
-  {
-  "olimorris/codecompanion.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-  },
-  config = true
-  },
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-  },
+  -- {
+  --   "olimorris/codecompanion.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  --   config = true
+  -- },
+  -- {
+  --   "HiPhish/rainbow-delimiters.nvim",
+  -- },
 }
