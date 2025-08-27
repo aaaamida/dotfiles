@@ -52,8 +52,10 @@ return {
   },
   {
     "andweeb/presence.nvim",
-    cond = function ()
-      return vim.bo.filetype ~= "md"
+    enable = function ()
+      if vim.bo.filetype == "md" then
+        return false
+      end
     end
   },
   {
