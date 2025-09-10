@@ -32,7 +32,6 @@ require("catppuccin").setup({
 
 require("stay-centered").setup()
 require("colorizer").setup()
--- require("rainbow-delimiters")
 
 require("nvim-ts-autotag").setup({
   opts = {
@@ -47,37 +46,16 @@ require("nvim-ts-autotag").setup({
   },
 })
 
-require("lspconfig").qmlls.setup({
-  cmd = { "qmlls", "-E" },
+require("presence").setup({
+  blacklist = {
+    "markdown",
+    "md",
+    "TODO"
+  },
+  show_time = false,
 })
 
--- require("codecompanion").setup({
---   adapters = {
---     gemini = function()
---       return require("codecompanion.adapters").extend("gemini", {
---         schema = {
---           model = {
---             default = "gemini-1.5-flash",
---           },
---         },
---       })
---     end,
---   },
---   strategies = {
---     chat = {
---       keymaps = {
---         send = {
---           modes = {
---             n = { "<C-s>" },
---           },
---         },
---       },
---     },
---   },
--- })
-
 vim.g.autoformat = false
--- vim.g.codecompanion_adapter = "gemini"
 
 vim.cmd([[
   colorscheme catppuccin-mocha
