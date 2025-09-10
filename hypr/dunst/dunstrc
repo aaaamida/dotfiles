@@ -59,7 +59,7 @@
 
     enable_recursive_icon_lookup = true
 
-    icon_theme = candy-icons
+    icon_theme = Papirus
     icon_position = left
 
     min_icon_size = 24
