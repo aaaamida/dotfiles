@@ -2,7 +2,7 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top",
-  "height": 20,
+  "height": 24,
   "spacing": 4,
   "mode": "dock",
   "modules-left": [
