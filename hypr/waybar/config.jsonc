@@ -4,7 +4,7 @@
   "position": "top",
   "height": 24,
   "spacing": 4,
-  "mode": "dock",
+  "mode": "overlay",
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/mode",
