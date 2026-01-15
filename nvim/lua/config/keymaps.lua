@@ -21,3 +21,4 @@ map({"n", "v", "i", "t"}, "<C-S-Tab>", "<cmd>bprevious<cr>", { desc = "Move to p
 map("n", "<leader>Cc", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "Open chat panel" })
 
 map("n", "<leader>\\", "<cmd>normal gcc<cr>", { desc = "Toggle Comment (gcc)" })
+map("n", "<leader>T", "<cmd>TransparentToggle<cr>", { desc = "Toggle Transparency" })

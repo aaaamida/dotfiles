@@ -48,6 +48,12 @@ autocmd("CursorHold", {
   end,
 })
 
+autocmd("VimLeavePre", {
+  callback = function()
+    vim.cmd("mksession!")
+  end
+})
+
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,

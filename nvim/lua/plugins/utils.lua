@@ -91,6 +91,9 @@ return {
       },
     },
   },
+  -- {
+  --   "ionide/Ionide-vim"
+  -- },
   {
     "elixir-tools/elixir-tools.nvim",
     version = "*",
@@ -141,5 +144,5 @@ return {
     keys = {
         { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
-  }
+  },
 }

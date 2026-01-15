@@ -55,6 +55,19 @@ require("presence").setup({
   show_time = false,
 })
 
+require('lspconfig').clangd.setup({
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--completion-style=detailed",
+    "--function-arg-placeholders",
+    "--fallback-style=llvm",
+    "--query-driver=$(which clang)"
+  }
+})
+
 vim.g.autoformat = false
 
 vim.cmd([[
