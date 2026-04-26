@@ -55,6 +55,7 @@ binds {
   Super+N     { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
   Super+Alt+N { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
   Super+Alt+P { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
+  Super+Alt+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
   Super+Alt+Comma  { spawn "noctalia-shell" "ipc" "call" "media" "seekRelative" "-10.0"; }
   Super+Alt+Period { spawn "noctalia-shell" "ipc" "call" "media" "seekRelative" "+10.0"; }
 
@@ -72,6 +73,4 @@ binds {
   Print       { screenshot; }
   Alt+Print   { screenshot-window; }
   Shift+Print { screenshot-screen; }
-
-  Alt+L { spawn "hyprlock" "-c" "~/.df/hypr/lock/hyprlock.conf" "--immediate-render" "--no-fade-in"; }
 }

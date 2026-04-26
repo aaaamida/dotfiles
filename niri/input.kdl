@@ -12,7 +12,8 @@ input {
   }
 
   mouse {
-    accel-speed 0.3
+    accel-speed 0.7
+    accel-profile "flat"
   }
 
   focus-follows-mouse
