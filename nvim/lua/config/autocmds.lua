@@ -18,6 +18,7 @@ autocmd("BufEnter", {
       or ft == "jsonc"
       or ft == "md"
       or ft == "nix"
+      or ft == "kdl"
     then
       vim.cmd([[set nowrap rnu tabstop=2 shiftwidth=2 autoindent smartindent]])
     elseif ft == "typst" then
