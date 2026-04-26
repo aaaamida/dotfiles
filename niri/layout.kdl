@@ -30,3 +30,8 @@ layout {
     top 3
   }
 }
+
+overview {
+  zoom 0.5
+  backdrop-color "#222222"
+}
