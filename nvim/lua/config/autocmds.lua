@@ -17,6 +17,7 @@ autocmd("BufEnter", {
       or ft == "json"
       or ft == "jsonc"
       or ft == "md"
+      or ft == "nix"
     then
       vim.cmd([[set nowrap rnu tabstop=2 shiftwidth=2 autoindent smartindent]])
     elseif ft == "typst" then
@@ -50,7 +51,9 @@ autocmd("CursorHold", {
 
 autocmd("VimLeavePre", {
   callback = function()
-    vim.cmd("mksession!")
+    if vim.uv.fs_stat(vim.fn.getcwd() .. "/.git") ~= nil then
+      vim.cmd("mksession!")
+    end
   end
 })
 
