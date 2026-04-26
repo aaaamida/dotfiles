@@ -1,0 +1,32 @@
+prefer-no-csd
+
+layout {
+  gaps 4
+
+  preset-column-widths {
+    proportion 1.0
+    proportion 0.5
+  }
+
+  default-column-width {
+    proportion 1.0
+  }
+
+  focus-ring {
+    on
+    width 2
+    active-gradient from="#f5abb9" to="#5bcffa" angle=90 relative-to="workspace-view"
+    inactive-gradient from="#f5a3a3" to="#d88db3" angle=90 relative-to="workspace-view"
+  }
+
+  border {
+    width 2
+  }
+
+  struts {
+    bottom 3
+    right 2
+    left 2
+    top 3
+  }
+}

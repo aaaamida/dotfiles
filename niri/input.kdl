@@ -1,0 +1,25 @@
+input {
+  keyboard {
+    xkb {
+      layout "us"
+      variant "dvorak"
+      options "caps:swapescape"
+    }
+  }
+
+  touchpad {
+    tap
+  }
+
+  mouse {
+    accel-speed 0.3
+  }
+
+  focus-follows-mouse
+  warp-mouse-to-focus mode="center-xy"
+}
+
+cursor {
+  xcursor-theme "zhao"
+  xcursor-size 32
+}

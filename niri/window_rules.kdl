@@ -1,0 +1,55 @@
+workspace "1" {
+  layout {
+    gaps 0
+    struts {
+      bottom 0
+      right 0
+      left 0
+      top 0
+    }
+  }
+}
+
+window-rule {
+  draw-border-with-background false
+  geometry-corner-radius 0
+  clip-to-geometry true
+}
+
+window-rule {
+  match is-floating=true
+  geometry-corner-radius 4
+}
+
+window-rule {
+  match app-id="kitty"
+  border { off; }
+  focus-ring { off; }
+}
+
+window-rule {
+  match app-id="org.pwmt.zathura"
+  default-column-width { fixed 725; }
+}
+
+window-rule {
+  match app-id="org.qbittorrent.qBittorrent"
+  default-column-width { proportion 0.5; }
+  open-floating true
+}
+
+window-rule {
+  match app-id="org.kde.dolphin"
+  default-column-width { proportion 0.5; }
+  open-floating true
+}
+
+window-rule {
+  match app-id="zen-beta"
+  default-column-width { proportion 0.67; }
+}
+
+window-rule {
+  match app-id="discord"
+  default-column-width { proportion 0.5; }
+}

@@ -1,0 +1,77 @@
+binds {
+  // Apps
+  Super+T { spawn "kitty"; }
+  Super+Z { spawn "zen-beta"; }
+  Super+D { spawn "sh" "-c" "QT_IM_MODULE=fcitx discord --enable-features=UseOzonePlatform --ozone-platform=wayland"; }
+  Super+Y { spawn "pear-desktop" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland"; }
+  Super+E { spawn "sh" "-c" "XDG_CURRENT_DESKTOP=kde dolphin"; }
+  Super+Shift+Ctrl+Alt+L { spawn "zen-beta" "linkedin.com"; }
+
+  // Window Management
+  Super+Q { close-window; }
+  Alt+F4 { close-window; }
+  F10 { fullscreen-window; }
+  Super+O { toggle-overview; }
+
+  Super+H { focus-column-left; }
+  Super+L { focus-column-right; }
+  Super+J { focus-window-up; }
+  Super+K { focus-window-down; }
+
+  Super+Shift+Comma  { set-column-width "-1%"; }
+  Super+Shift+Period { set-column-width "+1%"; }
+  // Super+Shift+J { set-window-height "+10px"; }
+  // Super+Shift+K { set-window-height "-10px"; }
+
+  Super+Shift+L { move-column-right; }
+  Super+Shift+H { move-column-left; }
+  Super+Comma { consume-or-expel-window-left; }
+
+  Super+1 { focus-workspace "1"; }
+  Super+2 { focus-workspace 2; }
+  Super+3 { focus-workspace 3; }
+  Super+4 { focus-workspace 4; }
+  Super+5 { focus-workspace 5; }
+  Super+6 { focus-workspace 6; }
+  Super+7 { focus-workspace 7; }
+  Super+8 { focus-workspace 8; }
+  Super+9 { focus-workspace 9; }
+  Super+0 { focus-workspace 10; }
+
+  Super+Shift+1 { move-window-to-workspace "1"; }
+  Super+Shift+2 { move-window-to-workspace 2; }
+  Super+Shift+3 { move-window-to-workspace 3; }
+  Super+Shift+4 { move-window-to-workspace 4; }
+  Super+Shift+5 { move-window-to-workspace 5; }
+  Super+Shift+6 { move-window-to-workspace 6; }
+  Super+Shift+7 { move-window-to-workspace 7; }
+  Super+Shift+8 { move-window-to-workspace 8; }
+  Super+Shift+9 { move-window-to-workspace 9; }
+  Super+Shift+0 { move-window-to-workspace 10; }
+
+  Super+Space { spawn "noctalia-shell" "ipc" "call" "bar" "toggle"; }
+  Super+M     { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+  Super+U     { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+  Super+N     { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
+  Super+Alt+N { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
+  Super+Alt+P { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
+  Super+Alt+Comma  { spawn "noctalia-shell" "ipc" "call" "media" "seekRelative" "-10.0"; }
+  Super+Alt+Period { spawn "noctalia-shell" "ipc" "call" "media" "seekRelative" "+10.0"; }
+
+  XF86AudioRaiseVolume  { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+  XF86AudioLowerVolume  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+  XF86AudioMute         { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+  XF86AudioMicMute      { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+  XF86MonBrightnessUp   { spawn "brightnessctl" "s" "5%+"; }
+  XF86MonBrightnessDown { spawn "brightnessctl" "s" "5%-"; }
+  XF86AudioNext  { spawn "playerctl" "next"; }
+  XF86AudioPrev  { spawn "playerctl" "previous"; }
+  XF86AudioPlay  { spawn "playerctl" "play-pause"; }
+  XF86AudioPause { spawn "playerctl" "play-pause"; }
+
+  Print       { screenshot; }
+  Alt+Print   { screenshot-window; }
+  Shift+Print { screenshot-screen; }
+
+  Alt+L { spawn "hyprlock" "-c" "~/.df/hypr/lock/hyprlock.conf" "--immediate-render" "--no-fade-in"; }
+}
