@@ -12,6 +12,7 @@ binds {
   Alt+F4 { close-window; }
   F10 { fullscreen-window; }
   Super+O { toggle-overview; }
+  Super+V { toggle-window-floating; }
 
   Super+H { focus-column-left; }
   Super+L { focus-column-right; }
@@ -27,8 +28,8 @@ binds {
   Super+Shift+H { move-column-left; }
   Super+Comma { consume-or-expel-window-left; }
 
-  Super+1 { focus-workspace "1"; }
-  Super+2 { focus-workspace 2; }
+  Super+1 { focus-workspace "term"; }
+  Super+2 { focus-workspace "net"; }
   Super+3 { focus-workspace 3; }
   Super+4 { focus-workspace 4; }
   Super+5 { focus-workspace 5; }
@@ -38,8 +39,8 @@ binds {
   Super+9 { focus-workspace 9; }
   Super+0 { focus-workspace 10; }
 
-  Super+Shift+1 { move-window-to-workspace "1"; }
-  Super+Shift+2 { move-window-to-workspace 2; }
+  Super+Shift+1 { move-window-to-workspace "term"; }
+  Super+Shift+2 { move-window-to-workspace "net"; }
   Super+Shift+3 { move-window-to-workspace 3; }
   Super+Shift+4 { move-window-to-workspace 4; }
   Super+Shift+5 { move-window-to-workspace 5; }
@@ -59,16 +60,16 @@ binds {
   Super+Alt+Comma  { spawn "noctalia-shell" "ipc" "call" "media" "seekRelative" "-10.0"; }
   Super+Alt+Period { spawn "noctalia-shell" "ipc" "call" "media" "seekRelative" "+10.0"; }
 
-  XF86AudioRaiseVolume  { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
-  XF86AudioLowerVolume  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
-  XF86AudioMute         { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-  XF86AudioMicMute      { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-  XF86MonBrightnessUp   { spawn "brightnessctl" "s" "5%+"; }
-  XF86MonBrightnessDown { spawn "brightnessctl" "s" "5%-"; }
-  XF86AudioNext  { spawn "playerctl" "next"; }
-  XF86AudioPrev  { spawn "playerctl" "previous"; }
-  XF86AudioPlay  { spawn "playerctl" "play-pause"; }
-  XF86AudioPause { spawn "playerctl" "play-pause"; }
+  XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+  XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+  XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+  XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+  XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "5%+"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
+  XF86AudioNext   allow-when-locked=true { spawn "playerctl" "next"; }
+  XF86AudioPrev   allow-when-locked=true { spawn "playerctl" "previous"; }
+  XF86AudioPlay   allow-when-locked=true { spawn "playerctl" "play-pause"; }
+  XF86AudioPause  allow-when-locked=true { spawn "playerctl" "play-pause"; }
 
   Print       { screenshot; }
   Alt+Print   { screenshot-window; }

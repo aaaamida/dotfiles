@@ -1,4 +1,4 @@
-workspace "1" {
+workspace "term" {
   layout {
     gaps 0
     struts {
@@ -9,6 +9,7 @@ workspace "1" {
     }
   }
 }
+workspace "net"
 
 window-rule {
   draw-border-with-background false
@@ -25,11 +26,17 @@ window-rule {
   match app-id="kitty"
   border { off; }
   focus-ring { off; }
+  open-on-workspace "term"
 }
 
 window-rule {
   match app-id="org.pwmt.zathura"
   default-column-width { fixed 725; }
+}
+
+window-rule {
+  match app-id="com.github.th_ch.youtube_music"
+  default-column-width { fixed 1500; }
 }
 
 window-rule {
@@ -45,11 +52,19 @@ window-rule {
 }
 
 window-rule {
+  match app-id="org.freedesktop.impl.portal.desktop.kde"
+  default-column-width { fixed 768; }
+  open-floating true
+}
+
+window-rule {
   match app-id="zen-beta"
   default-column-width { proportion 0.67; }
+  open-on-workspace "net"
 }
 
 window-rule {
   match app-id="discord"
   default-column-width { proportion 0.5; }
+  open-on-workspace "net"
 }
