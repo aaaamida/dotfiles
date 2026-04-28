@@ -24,3 +24,9 @@ cursor {
   xcursor-theme "zhao"
   xcursor-size 32
 }
+
+gestures {
+  hot-corners {
+    off
+  }
+}

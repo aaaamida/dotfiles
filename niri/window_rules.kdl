@@ -13,7 +13,7 @@ workspace "net"
 
 window-rule {
   draw-border-with-background false
-  geometry-corner-radius 0
+  geometry-corner-radius 4
   clip-to-geometry true
 }
 
@@ -27,16 +27,19 @@ window-rule {
   border { off; }
   focus-ring { off; }
   open-on-workspace "term"
+  geometry-corner-radius 0
 }
 
 window-rule {
   match app-id="org.pwmt.zathura"
   default-column-width { fixed 725; }
+  geometry-corner-radius 0
 }
 
 window-rule {
   match app-id="com.github.th_ch.youtube_music"
   default-column-width { fixed 1500; }
+  opacity 0.85
 }
 
 window-rule {

@@ -2,6 +2,7 @@ prefer-no-csd
 
 layout {
   gaps 4
+  default-column-display "tabbed"
 
   preset-column-widths {
     proportion 1.0
@@ -13,21 +14,23 @@ layout {
   }
 
   focus-ring {
-    on
+    off
     width 2
-    active-gradient from="#f5abb9" to="#5bcffa" angle=90 relative-to="workspace-view"
-    inactive-gradient from="#f5a3a3" to="#d88db3" angle=90 relative-to="workspace-view"
   }
 
   border {
-    width 2
+    on
+    width 3
+    inactive-gradient from="#f5a3a3" to="#d88db3" angle=90
+    active-gradient from="#f5abb9" to="#5bcffa" angle=90
+    urgent-color "#ff91af"
   }
 
   struts {
-    bottom 3
-    right 2
-    left 2
-    top 3
+    bottom 2
+    right 1
+    left 1
+    top 2
   }
 }
 

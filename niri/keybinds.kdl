@@ -18,6 +18,8 @@ binds {
   Super+L { focus-column-right; }
   Super+J { focus-window-up; }
   Super+K { focus-window-down; }
+  Super+Comma { focus-workspace-up; }
+  Super+Period { focus-workspace-down; }
 
   Super+Shift+Comma  { set-column-width "-1%"; }
   Super+Shift+Period { set-column-width "+1%"; }
@@ -26,7 +28,6 @@ binds {
 
   Super+Shift+L { move-column-right; }
   Super+Shift+H { move-column-left; }
-  Super+Comma { consume-or-expel-window-left; }
 
   Super+1 { focus-workspace "term"; }
   Super+2 { focus-workspace "net"; }
