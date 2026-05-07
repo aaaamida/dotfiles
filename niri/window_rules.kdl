@@ -10,6 +10,18 @@ workspace "term" {
   }
 }
 workspace "net"
+workspace "hdmi" {
+  open-on-output "HDMI-A-1"
+  layout {
+    gaps 0
+    struts {
+      bottom 0
+      right 0
+      left 0
+      top 0
+    }
+  }
+}
 
 window-rule {
   draw-border-with-background false
@@ -39,6 +51,7 @@ window-rule {
 window-rule {
   match app-id="com.github.th_ch.youtube_music"
   default-column-width { fixed 1500; }
+  open-on-workspace "net"
   opacity 0.85
 }
 
@@ -63,11 +76,49 @@ window-rule {
 window-rule {
   match app-id="zen-beta"
   default-column-width { proportion 0.67; }
+  open-floating false
   open-on-workspace "net"
+
+  // v26.04+
+  // popups {
+  //   open-floating true
+  // }
 }
 
 window-rule {
   match app-id="discord"
   default-column-width { proportion 0.5; }
   open-on-workspace "net"
+}
+
+window-rule {
+  match app-id="vesktop"
+  default-column-width { proportion 0.5; }
+  open-on-workspace "net"
+}
+
+window-rule {
+  match app-id="io.github.tobagin.karere"
+  default-column-width { proportion 0.5; }
+  open-on-workspace "net"
+  block-out-from "screencast"
+}
+
+window-rule {
+  // block twitter, whatsapp, telegram, youtube, n claude
+  match title=r#"^(twt|wa|tg|yt|butthole).*"#
+  block-out-from "screencast"
+}
+
+window-rule {
+  match app-id="at.yrlf.wl_mirror"
+  default-column-width { proportion 1.0; }
+  open-on-workspace "hdmi"
+  open-fullscreen true
+  open-focused false
+}
+
+layer-rule {
+  match namespace="^notifications$"
+  block-out-from "screencast"
 }

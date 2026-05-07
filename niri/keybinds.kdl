@@ -2,9 +2,10 @@ binds {
   // Apps
   Super+T { spawn "kitty"; }
   Super+Z { spawn "zen-beta"; }
-  Super+D { spawn "sh" "-c" "QT_IM_MODULE=fcitx discord --enable-features=UseOzonePlatform --ozone-platform=wayland"; }
+  Super+D { spawn-sh "QT_IM_MODULE=fcitx discord --enable-features=UseOzonePlatform --ozone-platform=wayland"; }
+  Super+Shift+D { spawn-sh "QT_IM_MODULE=fcitx vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland"; }
   Super+Y { spawn "pear-desktop" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland"; }
-  Super+E { spawn "sh" "-c" "XDG_CURRENT_DESKTOP=kde dolphin"; }
+  Super+W { spawn "karere"; }
   Super+Shift+Ctrl+Alt+L { spawn "zen-beta" "linkedin.com"; }
 
   // Window Management
@@ -13,6 +14,8 @@ binds {
   F10 { fullscreen-window; }
   Super+O { toggle-overview; }
   Super+V { toggle-window-floating; }
+  // Mirror output to HDMI-A-1
+  Super+Shift+Alt+0 { spawn "nu" "-c" "wl-mirror --scaling fit (niri msg --json focused-output | jq -r .name)"; }
 
   Super+H { focus-column-left; }
   Super+L { focus-column-right; }
@@ -38,7 +41,7 @@ binds {
   Super+7 { focus-workspace 7; }
   Super+8 { focus-workspace 8; }
   Super+9 { focus-workspace 9; }
-  Super+0 { focus-workspace 10; }
+  Super+0 { focus-workspace "hdmi"; }
 
   Super+Shift+1 { move-window-to-workspace "term"; }
   Super+Shift+2 { move-window-to-workspace "net"; }
@@ -50,10 +53,12 @@ binds {
   Super+Shift+8 { move-window-to-workspace 8; }
   Super+Shift+9 { move-window-to-workspace 9; }
   Super+Shift+0 { move-window-to-workspace 10; }
+  Super+Alt+0 { move-window-to-workspace "hdmi"; }
 
   Super+Space { spawn "noctalia-shell" "ipc" "call" "bar" "toggle"; }
   Super+M     { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
   Super+U     { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+  Super+C     { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
   Super+N     { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
   Super+Alt+N { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
   Super+Alt+P { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
